@@ -1,0 +1,273 @@
+:root {
+  font-family: "Segoe UI", sans-serif;
+  color: #f4f7fb;
+  background:
+    radial-gradient(circle at top, rgba(40, 132, 255, 0.28), transparent 42%),
+    linear-gradient(180deg, #081019 0%, #05070b 100%);
+  font-synthesis: none;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.main-shell {
+  min-height: 100%;
+  display: grid;
+  gap: 2rem;
+  align-content: center;
+  padding: 3rem;
+  background:
+    radial-gradient(circle at top right, rgba(79, 163, 255, 0.2), transparent 32%),
+    linear-gradient(145deg, rgba(12, 18, 28, 0.96), rgba(6, 10, 16, 0.98));
+}
+
+.main-shell__hero {
+  max-width: 42rem;
+}
+
+.main-shell__eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #86b8ff;
+}
+
+.main-shell__hero h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.main-shell__body {
+  margin: 1rem 0 0;
+  max-width: 36rem;
+  color: rgba(230, 239, 255, 0.78);
+  font-size: 1.05rem;
+}
+
+.main-shell__panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.main-shell__metric {
+  padding: 1.2rem;
+  border: 1px solid rgba(128, 166, 220, 0.16);
+  border-radius: 1.1rem;
+  background: rgba(10, 15, 24, 0.88);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.main-shell__metric span {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: rgba(217, 229, 249, 0.6);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.main-shell__metric strong {
+  font-size: 1.1rem;
+}
+
+.pet-window {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+}
+
+.pet-window__shell {
+  width: 100%;
+  height: 100%;
+  padding: 0.9rem;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.55rem;
+  background:
+    radial-gradient(circle at center, rgba(32, 119, 255, 0.2), transparent 58%),
+    transparent;
+}
+
+.pet-window__status,
+.pet-window__hint {
+  text-align: center;
+  color: #d8e6ff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+}
+
+.pet-window__status {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.pet-window__hint {
+  max-width: 11rem;
+  margin: 0;
+  font-size: 0.72rem;
+  opacity: 0.78;
+}
+
+.pet-button {
+  border: 0;
+  background: transparent;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  padding: 0.4rem;
+}
+
+.pet-button:focus-visible {
+  outline: 2px solid rgba(158, 201, 255, 0.9);
+  outline-offset: 8px;
+  border-radius: 1.25rem;
+}
+
+.pet-button:disabled {
+  cursor: progress;
+}
+
+.pet-button__label {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(153, 186, 239, 0.24);
+  border-radius: 999px;
+  background: rgba(12, 18, 28, 0.72);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  font-size: 0.8rem;
+}
+
+.pet-avatar {
+  position: relative;
+  width: 5.8rem;
+  height: 5.8rem;
+  display: block;
+  animation: pet-float 2.9s ease-in-out infinite;
+}
+
+.pet-avatar__halo,
+.pet-avatar__body,
+.pet-avatar__eye,
+.pet-avatar__spark {
+  position: absolute;
+  display: block;
+}
+
+.pet-avatar__halo {
+  inset: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(80, 168, 255, 0.45), transparent 65%);
+  filter: blur(4px);
+}
+
+.pet-avatar__body {
+  inset: 0.85rem;
+  border-radius: 42% 42% 48% 48%;
+  background:
+    radial-gradient(circle at 30% 30%, #dff2ff 0%, #99d1ff 26%, #4a9eff 62%, #2357d4 100%);
+  box-shadow:
+    inset 0 -12px 18px rgba(16, 48, 125, 0.42),
+    0 18px 35px rgba(8, 16, 41, 0.35);
+}
+
+.pet-avatar__eye {
+  top: 2.4rem;
+  width: 0.46rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: #06111f;
+}
+
+.pet-avatar__eye--left {
+  left: 2.2rem;
+}
+
+.pet-avatar__eye--right {
+  right: 2.2rem;
+}
+
+.pet-avatar__spark {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(231, 245, 255, 0.92);
+  box-shadow: 0 0 15px rgba(203, 234, 255, 0.8);
+}
+
+.pet-avatar__spark--one {
+  top: 1rem;
+  right: 0.65rem;
+}
+
+.pet-avatar__spark--two {
+  bottom: 0.9rem;
+  left: 0.55rem;
+  width: 0.38rem;
+  height: 0.38rem;
+}
+
+.pet-avatar[data-awake="false"] {
+  opacity: 0.84;
+}
+
+.pet-avatar[data-awake="false"] .pet-avatar__eye {
+  height: 0.18rem;
+  top: 2.72rem;
+}
+
+@keyframes pet-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 720px) {
+  .main-shell {
+    padding: 1.5rem;
+  }
+
+  .main-shell__panel {
+    grid-template-columns: 1fr;
+  }
+}
